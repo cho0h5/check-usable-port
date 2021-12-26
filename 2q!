@@ -1,0 +1,14 @@
+use std::net::UdpSocket;
+
+fn main() {
+    let ports = ["22", "3389", "8080", "80", "443", "8581"]
+
+    check_port(ports[0]);
+
+    println!("done!");
+}
+
+fn check_port(port: &str) -> Result<UdpSocket> {
+    UdpSocket::bind("127.0.0.1:8080")
+}
+
