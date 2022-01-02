@@ -1,4 +1,4 @@
-use std::net::UdpSocket;
+use std::net::TcpListener;
 use std::io::Result;
 
 fn main() {
@@ -12,7 +12,7 @@ fn main() {
     }
 }
 
-fn check_port(port: &str) -> Result<UdpSocket> {
-    UdpSocket::bind(format!("{}{}", "127.0.0.1:", port))
+fn check_port(port: &str) -> Result<TcpListener> {
+    TcpListener::bind(format!("{}{}", "127.0.0.1:", port))
 }
 
